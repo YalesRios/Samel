@@ -7,11 +7,21 @@ These are the methods that Samel might be compared to
 
 - Softmax Threshold (singular network)
 
-
-
 - MC Dropout (Droupout as a Bayesian Approximation) (maybe singular network)
 
-## Datasets/Problems
+### Saliency Variance Calculation Methods
+
+- Standard Deviation
+
+- Interquartile range
+
+### How will the saliency play a part in influencing the prediction?
+
+- Threshold
+
+- Learned Threshold
+
+### Datasets/Problems
 
 - Endangered Animals
 
@@ -70,15 +80,3 @@ Saliency map generation methods that could be used
 > Kindermans et al. [6] and Shrikumar et al. [3] showed that if modifications for numerical stability are not taken into account, the LRP rules are equivalent within a scaling factor to Gradient ⊙ Input. Ancona et al. [7] showed that for ReLU networks (with zero baseline and no biases) the ε-LRP and DeepLIFT (Rescale) explanation methods are equivalent to the Gradient ⊙ Input.
 
 [Gupta, Arushi, and Sanjeev Arora. "A Simple Saliency Method That Passes the Sanity Checks." arXiv preprint arXiv:1905.12152 (2019).](https://arxiv.org/abs/1905.12152)
-
-### Saliency Variance Calculation Methods
-
-- Standard Deviation
-
-- Interquartile range
-
-### How will the saliency play a part in influencing the prediction?
-
-- Threshold
-
-- Learned Threshold
