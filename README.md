@@ -1,10 +1,22 @@
-# Samel Plan
+# Samel
+
+## Confidence Assessments
+These are the methods that Samel might be compared to
+
+- Bayesian Optimal Classifier (Bayesian Neural Nets) Probability Value
+
+- Softmax Threshold (singular network)
+
+
+
+- MC Dropout (Droupout as a Bayesian Approximation) (maybe singular network)
 
 ## Datasets/Problems
 
 - Endangered Animals
 
-## Ensemble types
+### Ensemble types
+Ways to organise/generate classifiers that are different from each other
 
 - Dropout Ensembles
 
@@ -16,7 +28,8 @@
 
 - AdaNet
 
-## Fusion types
+### Fusion types
+Ways to make a prediction using the predictions of the individual classifiers
 
 - Majority Voting
 
@@ -28,7 +41,8 @@
 
 - Bayes Optimal Classifier
 
-## Architectures
+### Architectures
+Neural Network architectures that could be used
 
 - NIN
 
@@ -38,7 +52,8 @@
 
 - Res Net
 
-## Saliency Methods
+### Saliency Methods
+Saliency map generation methods that could be used
 
 - Gradient Input
 
@@ -56,3 +71,14 @@
 
 [Gupta, Arushi, and Sanjeev Arora. "A Simple Saliency Method That Passes the Sanity Checks." arXiv preprint arXiv:1905.12152 (2019).](https://arxiv.org/abs/1905.12152)
 
+### Saliency Variance Calculation Methods
+
+- Standard Deviation
+
+- Interquartile range
+
+### How will the saliency play a part in influencing the prediction?
+
+- Threshold
+
+- Learned Threshold
