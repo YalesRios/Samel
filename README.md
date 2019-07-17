@@ -45,7 +45,7 @@ Ways to make a prediction using the predictions of the individual classifiers
 
 - Super Learner
 
-- Stacked Genralisation (should be more specific)
+- Stacked Generalisation (should be more specific)
 
 - Bayes Optimal Classifier
 
