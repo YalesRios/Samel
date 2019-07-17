@@ -3,8 +3,6 @@
 ## Confidence Assessments
 These are the methods that Samel might be compared to
 
-- Bayesian Optimal Classifier (Bayesian Neural Nets) Probability Value
-
 - Softmax Threshold (singular network)
 
 - MC Dropout (Droupout as a Bayesian Approximation) (maybe singular network)
