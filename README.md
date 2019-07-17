@@ -7,6 +7,8 @@ These are the methods that Samel might be compared to
 
 - MC Dropout ([Droupout as a Bayesian Approximation](https://arxiv.org/pdf/1506.02142.pdf)) (maybe singular network)
 
+- Bayesian NNs
+
 ### Saliency Variance Calculation Methods
 
 - Standard Deviation
