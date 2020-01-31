@@ -9,6 +9,8 @@ These are the methods that Samel might be compared to
 
 - Bayesian NNs
 
+- [Deep Ensembles](https://arxiv.org/pdf/1612.01474.pdf)
+
 ### Saliency Variance Calculation Methods
 
 - Standard Deviation
