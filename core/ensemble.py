@@ -63,7 +63,7 @@ def train_ensemble(ensemble,trainX,trainY,epochs = 5):
 #Function to get average output values for each network in the ensemble
 def get_ensemble_output_values(ensemble,input,number_of_output_nodes):
 
-    predictions = np.zeros(np.size(number_of_output_nodes))
+    predictions = np.zeros(number_of_output_nodes)
 
     for network in ensemble:
         predictions = predictions + network.predict(np.expand_dims(input,axis=0))
@@ -75,15 +75,37 @@ def get_ensemble_output_values(ensemble,input,number_of_output_nodes):
 #Function to get average output values from each network in ensemble for multiple inputs
 def get_ensemble_output_values_for_multiple_inputs(ensemble,inputs,number_of_output_nodes):
 
-    predictions = np.zeros((np.size(inputs, axis=0), np.size(number_of_output_nodes)))
+    predictions = np.zeros((np.size(inputs, axis=0), number_of_output_nodes))
+    print(np.shape(predictions))
 
     for network in ensemble:
         predictions = predictions + network.predict(inputs)
 
+    print(np.shape(predictions))
     prediction_average = predictions / len(ensemble)
 
     return(prediction_average)
 
+def get_ensemble_votes(ensemble,input,number_of_output_nodes):
+
+    votes = np.zeros(number_of_output_nodes)
+
+    for network in ensemble:
+        predicted_output = np.argmax(network.predict(np.expand_dims(input,axis=0)))
+        votes[predicted_output] = votes[predicted_output] + 1
+
+    return(votes)
+
+def get_ensemble_votes_for_multiple_inputs(ensemble,inputs,number_of_output_nodes):
+
+    votes = np.zeros((np.size(inputs, axis=0), number_of_output_nodes))
+
+    for network in ensemble:
+        network_votes = np.argmax(network.predict(inputs),axis = 1)
+        for i in range(0,np.size(inputs, axis=0)):
+            votes[i][network_votes[i]] = votes[i][network_votes[i]] + 1
+
+    return(votes)
 #Function to calculate ensemble output (for one input) using mean of outputs
 def get_ensemble_predicted_output(ensemble,input,number_of_output_nodes):
 
@@ -96,11 +118,24 @@ def get_ensemble_predicted_output(ensemble,input,number_of_output_nodes):
 def get_ensemble_predicted_outputs(ensemble,inputs,number_of_output_nodes):
 
     prediction_average = get_ensemble_output_values_for_multiple_inputs(ensemble,inputs,number_of_output_nodes)
-    outputs = np.apply_along_axis(np.argmax, axis=1, arr=prediction_average)
+    outputs = np.argmax(prediction_average, axis=1)
 
     return(outputs)
 
-# Function to check the accuracy of an ensemble's predictions
+def get_ensemble_predicted_output_with_votes(ensemble,input,number_of_output_nodes):
+
+    votes = get_ensemble_votes(ensemble,input,number_of_output_nodes)
+    output = np.argmax(votes)
+
+    return(output)
+
+def get_ensemble_predicted_outputs_with_votes(ensemble,inputs,number_of_output_nodes):
+
+    votes = get_ensemble_votes_for_multiple_inputs(ensemble,inputs,number_of_output_nodes)
+    outputs = np.argmax(votes,axis=1)
+
+    return(outputs)
+
 def evaluate_ensemble_accuracy(ensemble,testX,testY):
 
     correct = np.sum(np.equal(get_ensemble_predicted_outputs(ensemble,testX,10),np.argmax(testY,axis = 1)))
