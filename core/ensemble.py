@@ -76,12 +76,10 @@ def get_ensemble_output_values(ensemble,input,number_of_output_nodes):
 def get_ensemble_output_values_for_multiple_inputs(ensemble,inputs,number_of_output_nodes):
 
     predictions = np.zeros((np.size(inputs, axis=0), number_of_output_nodes))
-    print(np.shape(predictions))
 
     for network in ensemble:
         predictions = predictions + network.predict(inputs)
 
-    print(np.shape(predictions))
     prediction_average = predictions / len(ensemble)
 
     return(prediction_average)
