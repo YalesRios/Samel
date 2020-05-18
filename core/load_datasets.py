@@ -1,5 +1,9 @@
 import tensorflow as tf
+import tensorflow_datasets as tfds
 import keras
+import os
+import numpy as np
+import imageio
 
 def load_data(dataset):
     if (dataset == "MNIST"):
@@ -19,16 +23,16 @@ def load_data(dataset):
         return (trainX, trainY),(testX, testY)
 
     elif (dataset == "NotMNIST"):
-        folders = ['../datasets/notMNIST_small/A',
-                   '../datasets/notMNIST_small/B',
-                   '../datasets/notMNIST_small/C',
-                   '../datasets/notMNIST_small/D',
-                   '../datasets/notMNIST_small/E',
-                   '../datasets/notMNIST_small/F',
-                   '../datasets/notMNIST_small/G',
-                   '../datasets/notMNIST_small/H',
-                   '../datasets/notMNIST_small/I',
-                   '../datasets/notMNIST_small/J']
+        folders = ['../../datasets/notMNIST_small/A',
+                   '../../datasets/notMNIST_small/B',
+                   '../../datasets/notMNIST_small/C',
+                   '../../datasets/notMNIST_small/D',
+                   '../../datasets/notMNIST_small/E',
+                   '../../datasets/notMNIST_small/F',
+                   '../../datasets/notMNIST_small/G',
+                   '../../datasets/notMNIST_small/H',
+                   '../../datasets/notMNIST_small/I',
+                   '../../datasets/notMNIST_small/J']
         
         image_size = 28  # Pixel width and height.
         pixel_depth = 255.0  # Number of levels per pixel.
@@ -108,3 +112,19 @@ def load_data(dataset):
         testX = testX.astype("float32") / 255.0
 
         return (trainX, trainY),(testX, testY)
+
+def crop_32_to_28(X):
+    X = np.delete(X,(0,1),axis=1)
+    X = np.delete(X,-1,axis=1)
+    X = np.delete(X,-2,axis=1)
+    X = np.delete(X,(0,1),axis=2)
+    X = np.delete(X,-1,axis=2)
+    X = np.delete(X,-2,axis=2)
+
+    return X
+
+def make_monochrome(X):
+    return (np.expand_dims(np.dot(X[...,:3], [0.299, 0.587, 0.114]),axis = -1))
+
+def pad_dataset(X):
+    return (np.pad(X,[(0,0),(2,2),(2,2),(1,1)], mode  = 'edge'))
