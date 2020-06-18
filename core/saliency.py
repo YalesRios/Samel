@@ -38,7 +38,7 @@ def generate_saliency_maps_for_one_input(ensemble,input,optimisers,visualised_la
 
 # Compute difference of saliency maps
 def generate_uncertainty_map(saliency_maps):
-    return(np.std(saliency_maps,axis=0)/np.average(saliency_maps,axis=0))
+    return(np.divide(np.std(saliency_maps,axis=0),np.average(saliency_maps,axis=0), out = np.zeros_like(np.std(saliency_maps, axis=0)), where = (np.average(saliency_maps, axis = 0) != 0)))
 
 # Compute difference of saliency maps
 def calculate_uncertainty_with_maps(saliency_maps):
