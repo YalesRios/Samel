@@ -427,7 +427,7 @@ plt.show()
 
 
 
-![png](output_38_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_38_1.png)
 
 
 
@@ -441,7 +441,7 @@ plt.show()
 
 
 
-![png](output_39_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_39_1.png)
 
 
 
@@ -457,7 +457,7 @@ plt.show()
 
 
 
-![png](output_40_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_40_1.png)
 
 
 
@@ -475,7 +475,7 @@ plt.show()
 
 
 
-![png](output_41_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_41_1.png)
 
 
 ## NotMNIST
@@ -495,7 +495,7 @@ plt.show()
 
 
 
-![png](output_43_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_43_1.png)
 
 
 
@@ -509,7 +509,7 @@ plt.show()
 
 
 
-![png](output_44_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_44_1.png)
 
 
 
@@ -525,7 +525,7 @@ plt.show()
 
 
 
-![png](output_45_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_45_1.png)
 
 
 
@@ -539,7 +539,7 @@ plt.show()
 
 
 
-![png](output_46_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_46_1.png)
 
 
 ## SVHN
@@ -559,7 +559,7 @@ plt.show()
 
 
 
-![png](output_48_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_48_1.png)
 
 
 
@@ -573,7 +573,7 @@ plt.show()
 
 
 
-![png](output_49_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_49_1.png)
 
 
 
@@ -589,7 +589,7 @@ plt.show()
 
 
 
-![png](output_50_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_50_1.png)
 
 
 
@@ -607,7 +607,7 @@ plt.show()
 
 
 
-![png](output_51_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_51_1.png)
 
 
 ## CIFAR10
@@ -627,7 +627,7 @@ plt.show()
 
 
 
-![png](output_53_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_53_1.png)
 
 
 
@@ -641,7 +641,7 @@ plt.show()
 
 
 
-![png](output_54_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_54_1.png)
 
 
 
@@ -657,7 +657,7 @@ plt.show()
 
 
 
-![png](output_55_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_55_1.png)
 
 
 
@@ -675,5 +675,5 @@ plt.show()
 
 
 
-![png](output_56_1.png)
+![png](GradCamMNIST_files/GradCamMNIST_56_1.png)
 
